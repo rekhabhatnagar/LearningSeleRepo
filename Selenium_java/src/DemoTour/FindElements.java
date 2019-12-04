@@ -27,6 +27,8 @@ public class FindElements {
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
+		System.out.println("Rekha");
+		
 		// Thread.sleep(1000);
 		 
 		 WebElement element = driver.findElement(By.linkText("REGISTER"));
