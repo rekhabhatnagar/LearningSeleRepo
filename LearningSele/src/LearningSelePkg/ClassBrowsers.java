@@ -14,31 +14,41 @@ public class ClassBrowsers {
 
 		String path = "E:\\My-Program Files\\eclipse\\";
 		
-		String browserType = "mozilla"; //"null;
+	/*	String browserType = "mozilla"; //"null;
 		
-		/*if (browserType.equals("chrome"))
+		if (browserType.equals("chrome"))
 		{
 		System.setProperty("webdriver.chrome.driver", path+"chromedriver.exe");
 		driver = new ChromeDriver();
 		} 
-		/*else if (browserType.equals("mozilla"))
+		else if (browserType.equals("mozilla"))
 		{
 		System.setProperty("webdriver.gecko.driver", path+"geckodriver.exe");
 		driver = new FirefoxDriver();
 		}
-		
+		else
 		{
 			System.setProperty("webdriver.ie.driver", path+"msedgedriver.exe");
 			driver = new InternetExplorerDriver();
 		}*/
-		
-		System.setProperty("webdriver.ie.driver","E:\\My-Program Files\\eclipse\\msedgedriver.exe");
+		try
+		{
+		System.setProperty("webdriver.ie.driver","E:\\My-Program Files\\eclipse\\IEDriverServer.exe");
 		driver = new InternetExplorerDriver();
 		
+		
+		//System.setProperty("webdriver.gecko.driver", path+"geckodriver.exe");
+		//driver = new FirefoxDriver();
 		driver.navigate().to("http://www.google.com");
 		
 		Thread.sleep(2000);	
 		driver.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		}
 	}
 
-}
+
